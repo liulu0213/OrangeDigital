@@ -4,10 +4,10 @@ This folder include the answer of the 1st question, it works for verifying wethe
 
 For example:
 ```js
-isPalindrome("ABA");
-isPalindrome("racecar");
-isPalindrome("ABCDcBA");
-isPalindrome(122131221);
+isPalindrome("ABA");   // console ABA is palindrome
+isPalindrome("racecar");   // console racecar is palindrome
+isPalindrome("ABCDcBA");   // console ABCDcBA is NOT palindrome
+isPalindrome(122131221);   // console 122131221 is palindrome
 ```
 
 #### ./weatherApp

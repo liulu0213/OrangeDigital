@@ -3,7 +3,7 @@ function isPalindrome(para) {
   const strArrRevert = [...strArr].reverse();
   const result = strArr.join() === strArrRevert.join();
 
-  console.debug(para, " is ", result ? "" : "not", " palindrome");
+  console.debug(para, " is ", result ? "" : "NOT", " palindrome");
 
   return result;
 }
