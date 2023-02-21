@@ -1,7 +1,6 @@
 import { useState, useEffect, forwardRef } from "react";
 import { useSelector } from "react-redux";
 import type { AppState } from "../store/";
-import type { MessageState } from "../store/message";
 import Snackbar from "@mui/material/Snackbar";
 import Alert, { AlertProps } from "@mui/material/Alert";
 
@@ -27,7 +26,6 @@ const AppSnackBar = function () {
     setOpen(false);
   };
   useEffect(() => {
-    console.log(message);
     setOpen(Object.keys(message).length > 0);
   }, [message]);
   return Object.keys(message).length > 0 ? (

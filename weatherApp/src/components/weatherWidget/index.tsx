@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import type { AppState } from "../../store/";
+import { getPreferences } from "../../api/localStorage";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
