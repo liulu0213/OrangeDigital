@@ -1,13 +1,15 @@
 import "./App.css";
 
-import WeatherSwitcher from "./features/weatherSwitch";
+import SearchBar from "./features/searchBar";
 import WeatherWidget from "./components/weatherWidget";
+import AppSnackBar from "./features/message";
 
 function App() {
   return (
     <div className="App">
-      <WeatherSwitcher />
+      <SearchBar />
       <WeatherWidget />
+      <AppSnackBar />
     </div>
   );
 }

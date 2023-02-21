@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import { savePreferences, clearPreferences } from "../../api/localStorage";
 import { CityWeather } from "../../store/weather";
 
-const SaveMyLocationButton = function () {
+const Buttons = function () {
   const weatherState = useSelector((state: AppState) => state.weather);
   const handleClick = function () {
     if (Object.keys(weatherState).length > 0) {
@@ -28,4 +28,4 @@ const SaveMyLocationButton = function () {
   );
 };
 
-export default SaveMyLocationButton;
+export default Buttons;

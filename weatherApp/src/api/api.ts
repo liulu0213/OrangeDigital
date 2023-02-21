@@ -5,22 +5,22 @@ type WeatherData = {
 };
 // pseudo database
 const weatherData: WeatherData = {
-  "New York": {
+  "new york": {
     temperature: 22,
     humidity: 0.6,
     windSpeed: 5,
   },
-  London: {
+  london: {
     temperature: 18,
     humidity: 0.8,
     windSpeed: 4,
   },
-  Paris: {
+  paris: {
     temperature: 20,
     humidity: 0.7,
     windSpeed: 6,
   },
-  Berlin: {
+  berlin: {
     temperature: 21,
     humidity: 0.75,
     windSpeed: 7,
@@ -28,9 +28,10 @@ const weatherData: WeatherData = {
 };
 
 const getWeather = function (city: string): Promise<Error | CityWeather> {
+  const lowerCityName = city.toLowerCase();
   const result = {
-    city: city,
-    detail: weatherData[city],
+    city: lowerCityName,
+    detail: weatherData[lowerCityName],
   };
   return new Promise((resolve, reject) => {
     if (!result.detail) {

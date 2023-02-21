@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { switchCity } from "../store/weather";
+import { pushMsg } from "../store/message";
 
 import { getWeather } from "../api/api";
 
@@ -10,7 +11,7 @@ import Button from "@mui/material/Button";
 
 import type { CityWeather } from "../store/weather";
 
-const WeatherSwitcher = function () {
+const SearchBar = function () {
   const [city, setCity] = useState("");
   const dispatch = useDispatch();
   const handleChange = function (e: React.ChangeEvent<HTMLInputElement>) {
@@ -24,7 +25,14 @@ const WeatherSwitcher = function () {
         const result = await getWeather(city);
         dispatch(switchCity(result as CityWeather));
       } catch (err) {
-        console.error(err);
+        let msgObj;
+        if (err instanceof Error) {
+          msgObj = { type: "error", content: err.message };
+        } else {
+          msgObj = { type: "error", content: "check console" };
+          console.log(err);
+        }
+        dispatch(pushMsg(msgObj));
       }
     }
   };
@@ -35,4 +43,4 @@ const WeatherSwitcher = function () {
     </Box>
   );
 };
-export default WeatherSwitcher;
+export default SearchBar;

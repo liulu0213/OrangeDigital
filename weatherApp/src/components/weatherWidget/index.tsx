@@ -11,15 +11,18 @@ import GrainIcon from "@mui/icons-material/Grain";
 import AirIcon from "@mui/icons-material/Air";
 
 import CelFahSwitch from "./tempratureSwitcher";
-import SaveMyLocationButton from "./SaveMyLocation";
+import Buttons from "./Actions";
 
 const Widget = function () {
   const weatherState = useSelector((state: AppState) => state.weather);
   const { city = "", detail = {} } = weatherState;
-  return (
+  return Object.keys(weatherState).length > 0 ? (
     <Card>
       <CardContent>
-        <Typography variant="h3" sx={{ textAlign: "left" }}>
+        <Typography
+          variant="h3"
+          sx={{ textAlign: "left", textTransform: "capitalize" }}
+        >
           {city}
         </Typography>
         {Object.entries(detail).map(([key, value]) => (
@@ -63,9 +66,9 @@ const Widget = function () {
         ))}
       </CardContent>
       <CardActions>
-        <SaveMyLocationButton />
+        <Buttons />
       </CardActions>
     </Card>
-  );
+  ) : null;
 };
 export default Widget;
