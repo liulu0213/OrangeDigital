@@ -13,7 +13,7 @@ const CardStyled = styled(Card)<{ city: string }>`
 `;
 
 const CardContentStyled = styled(CardContent)`
-  margin: 20px;
+  margin: 15px;
   background-color: rgb(255, 255, 255, 0.7);
 `;
 
