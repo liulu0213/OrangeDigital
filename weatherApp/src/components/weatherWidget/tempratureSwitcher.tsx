@@ -71,15 +71,15 @@ const CelFahSwitch = function ({ value }: { value: number }) {
       }}
     >
       <Stack direction="row" spacing={1}>
-        <Typography variant="caption">&#176;F</Typography>
+        <Typography variant="caption">F</Typography>
         <AntSwitch
           defaultChecked
           inputProps={{ "aria-label": "ant design" }}
           onChange={handleChange}
         />
-        <Typography variant="caption">&#176;C</Typography>
+        <Typography variant="caption">C</Typography>
       </Stack>
-      <Typography variant="body1">{`${val}`}</Typography>
+      <Typography variant="body1">{val}&#176;</Typography>
     </Box>
   );
 };
